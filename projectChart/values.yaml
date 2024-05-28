@@ -1,0 +1,42 @@
+postgres:
+  image:
+    repository: postgres
+    tag: latest
+  env:
+    POSTGRES_DB: mydatabase
+    POSTGRES_USER: myuser
+    POSTGRES_PASSWORD: mypassword
+  service:
+    port: 5432
+
+fastapi:
+  image:
+    repository: fastapi
+    tag: latest
+  service:
+    port: 80
+  replicas: 2
+
+scala:
+  image:
+    repository: scala
+    tag: latest
+  service:
+    port: 8080
+  replicas: 2
+
+springboot:
+  image:
+    repository: springboot
+    tag: latest
+  service:
+    port: 8080
+  replicas: 2
+
+react:
+  image:
+    repository: react
+    tag: latest
+  service:
+    port: 3000
+  replicas: 2
